@@ -6,14 +6,10 @@ on:
 jobs:
 
   build:
-
+          
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: ros-tooling/setup-ros@v0.3
-        with:
-          required-ros-distributions: foxy
-      - uses: ros-tooling/action-ros-ci@v0.2
-        with:
-          package-name: tello_driver, tello_msgs, tello_description, tello_gazebo
-          target-ros2-distro: foxy
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag tello_ros:$(date +%s)
