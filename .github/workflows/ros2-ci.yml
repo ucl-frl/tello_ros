@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: ros-tooling/setup-ros@v0.3
         with:
-          required-ros-distributions: humble
+          required-ros-distributions: foxy
       - uses: ros-tooling/action-ros-ci@v0.2
         with:
           package-name: tello_driver, tello_msgs, tello_description, tello_gazebo
